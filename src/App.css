@@ -1,37 +1,41 @@
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-import { useUserData } from "./hooks/useUserData";
-
-function App() {
-  const { data } = useUserData();
-
-  return (
-    <TableContainer component={Paper} sx={{ maxHeight: 740 }}>
-      <Table stickyHeader aria-label="sticky table">
-        <TableHead>
-          <TableRow>
-            <TableCell>ID</TableCell>
-            <TableCell>Nome</TableCell>
-            <TableCell>Email</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {data?.map((userData) => (
-            <TableRow key={userData.id} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
-              <TableCell>{userData.id}</TableCell>
-              <TableCell>{userData.name}</TableCell>
-              <TableCell>{userData.email}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-  );
+/* body {
+  background-color: #eeeeee;
+} */
+.App {
+  margin: 4rem;
 }
 
-export default App;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

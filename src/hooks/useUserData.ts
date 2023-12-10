@@ -14,6 +14,7 @@ export function useUserData() {
     queryFn: fetchData,
     queryKey: ["user-data"],
     retry: 2,
+    refetchInterval: 1000,
   });
 
   return {
